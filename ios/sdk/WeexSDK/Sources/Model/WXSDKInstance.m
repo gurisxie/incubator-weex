@@ -86,6 +86,7 @@ typedef enum : NSUInteger {
             instanceId = __instance % (1024*1024);
             __instance++;
         }
+        _isFirstMonitor = YES;
         _instanceId = [NSString stringWithFormat:@"%ld", (long)instanceId];
 
         [WXSDKManager storeInstance:self forID:_instanceId];
@@ -187,6 +188,11 @@ typedef enum : NSUInteger {
     
     WX_MONITOR_INSTANCE_PERF_START(WXPTFirstScreenRender, self);
     WX_MONITOR_INSTANCE_PERF_START(WXPTAllRender, self);
+    WX_MONITOR_INSTANCE_PERF_START(WXPExtra0,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXPExtra1,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXPExtra2,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXPExtra3,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXPExtra4,self);
     
     NSMutableDictionary *dictionary = [_options mutableCopy];
     if ([WXLog logLevel] >= WXLogLevelLog) {
@@ -353,6 +359,10 @@ typedef enum : NSUInteger {
 
 - (void)destroyInstance
 {
+    if(self && _isFirstMonitor){
+        _isFirstMonitor = NO;
+        WX_MONITOR_INSTANCE_PERF_END(WXPTAllRender, self);
+    }
     NSString *url = @"";
     if([WXPrerenderManager isTaskExist:[self.scriptURL absoluteString]]) {
         url = [self.scriptURL absoluteString];

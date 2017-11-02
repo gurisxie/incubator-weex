@@ -26,6 +26,11 @@
 #define WXREQUESTTYPE       @"requestType"
 #define WXCONNECTIONTYPE    @"connectionType"
 #define WXCUSTOMMONITORINFO @"customMonitorInfo"
+#define WXDIM1              @"wxdim1"
+#define WXDIM2              @"wxdim2"
+#define WXDIM3              @"wxdim3"
+#define WXDIM4              @"wxdim4"
+#define WXDIM5              @"wxdim5"
 
 #define SDKINITTIME         @"SDKInitTime"
 #define SDKINITINVOKETIME   @"SDKInitInvokeTime"
@@ -36,6 +41,11 @@
 #define SCREENRENDERTIME    @"screenRenderTime"
 #define TOTALTIME           @"totalTime"
 #define FIRSETSCREENJSFEXECUTETIME  @"firstScreenJSFExecuteTime"
+#define WXMEASURETIME1      @"measureTime1"
+#define WXMEASURETIME2      @"measureTime2"
+#define WXMEASURETIME3      @"measureTime3"
+#define WXMEASURETIME4      @"measureTime4"
+#define WXMEASURETIME5      @"measureTime5"
 
 #define CACHEPROCESSTIME    @"cacheProcessTime"
 #define CACHERATIO          @"cacheRatio"

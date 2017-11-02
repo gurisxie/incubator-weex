@@ -669,7 +669,7 @@ static css_node_t * rootNodeGetChild(void *context, int i)
         UIView *rootView = instance.rootView;
         
         WX_MONITOR_INSTANCE_PERF_END(WXPTFirstScreenRender, instance);
-        WX_MONITOR_INSTANCE_PERF_END(WXPTAllRender, instance);
+        //WX_MONITOR_INSTANCE_PERF_END(WXPTAllRender, instance);
         WX_MONITOR_SUCCESS(WXMTJSBridge);
         WX_MONITOR_SUCCESS(WXMTNativeRender);
         

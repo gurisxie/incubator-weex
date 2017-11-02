@@ -294,6 +294,7 @@ typedef NS_ENUM(NSInteger, WXErrorCode) {//error.code
 @property (nonatomic, strong) NSString *pageName;
 @property (nonatomic, weak) id pageObject;
 @property (nonatomic, strong) NSMutableDictionary *performanceDict;
+@property (nonatomic, assign) BOOL isFirstMonitor;
 
 
 /** 

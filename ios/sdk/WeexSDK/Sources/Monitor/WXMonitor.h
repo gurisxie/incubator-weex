@@ -30,6 +30,11 @@ typedef enum : NSUInteger {
     WXPTFrameworkExecute,
     // instance
     WXPTJSDownload,
+    WXPExtra0,
+    WXPExtra1,
+    WXPExtra2,
+    WXPExtra3,
+    WXPExtra4,
     WXPTJSCreateInstance,
     WXFirstScreenJSFExecuteTime,
     WXPTFirstScreenRender,
