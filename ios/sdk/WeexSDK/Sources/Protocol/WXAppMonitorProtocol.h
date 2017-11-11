@@ -26,6 +26,12 @@
 #define WXREQUESTTYPE       @"requestType"
 #define WXCONNECTIONTYPE    @"connectionType"
 #define WXCUSTOMMONITORINFO @"customMonitorInfo"
+//give choice that js can add dimension point to monitor
+#define WXDIMENSION1        @"wxdim1"
+#define WXDIMENSION2        @"wxdim2"
+#define WXDIMENSION3        @"wxdim3"
+#define WXDIMENSION4        @"wxdim4"
+#define WXDIMENSION5        @"wxdim5"
 
 #define SDKINITTIME         @"SDKInitTime"
 #define SDKINITINVOKETIME   @"SDKInitInvokeTime"
@@ -36,6 +42,12 @@
 #define SCREENRENDERTIME    @"screenRenderTime"
 #define TOTALTIME           @"totalTime"
 #define FIRSETSCREENJSFEXECUTETIME  @"firstScreenJSFExecuteTime"
+//give choice that js can add measure point to monitor
+#define WXMEASURETIME1      @"measureTime1"
+#define WXMEASURETIME2      @"measureTime2"
+#define WXMEASURETIME3      @"measureTime3"
+#define WXMEASURETIME4      @"measureTime4"
+#define WXMEASURETIME5      @"measureTime5"
 
 #define CACHEPROCESSTIME    @"cacheProcessTime"
 #define CACHERATIO          @"cacheRatio"

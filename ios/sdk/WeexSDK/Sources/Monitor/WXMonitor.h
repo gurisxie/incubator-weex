@@ -28,6 +28,11 @@ typedef enum : NSUInteger {
     WXPTInitalize = 0,
     WXPTInitalizeSync,
     WXPTFrameworkExecute,
+    WXBizMeasureTimeFirst,
+    WXBizMeasureTimeSecond,
+    WXBizMeasureTimeThird,
+    WXBizMeasureTimeForth,
+    WXBizMeasureTimeFifth,
     // instance
     WXPTJSDownload,
     WXPTJSCreateInstance,

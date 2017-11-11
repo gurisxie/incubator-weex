@@ -105,6 +105,21 @@ static WXThreadSafeMutableDictionary *globalPerformanceDict;
     if (instance.userInfo[@"weex_bundlejs_requestType"]) {
         commitDict[@"requestType"] = instance.userInfo[@"weex_bundlejs_requestType"];
     }
+    if (instance.userInfo[WXDIMENSION1]) {
+        commitDict[WXDIMENSION1] = instance.userInfo[WXDIMENSION1];
+    }
+    if (instance.userInfo[WXDIMENSION2]) {
+        commitDict[WXDIMENSION2] = instance.userInfo[WXDIMENSION2];
+    }
+    if (instance.userInfo[WXDIMENSION3]) {
+        commitDict[WXDIMENSION3] = instance.userInfo[WXDIMENSION3];
+    }
+    if (instance.userInfo[WXDIMENSION4]) {
+        commitDict[WXDIMENSION4] = instance.userInfo[WXDIMENSION4];
+    }
+    if (instance.userInfo[WXDIMENSION5]) {
+        commitDict[WXDIMENSION5] = instance.userInfo[WXDIMENSION5];
+    }
     if (instance.userInfo[CACHEPROCESSTIME]) {
         commitDict[CACHEPROCESSTIME] = instance.userInfo[CACHEPROCESSTIME];
     }
@@ -136,6 +151,11 @@ static WXThreadSafeMutableDictionary *globalPerformanceDict;
         commitKeyDict = @{
                           @(WXPTInitalize) : SDKINITTIME,
                           @(WXPTInitalizeSync) : SDKINITINVOKETIME,
+                          @(WXBizMeasureTimeFirst) : WXMEASURETIME1,
+                          @(WXBizMeasureTimeSecond) : WXMEASURETIME2,
+                          @(WXBizMeasureTimeThird) : WXMEASURETIME3,
+                          @(WXBizMeasureTimeForth) : WXMEASURETIME4,
+                          @(WXBizMeasureTimeFifth) : WXMEASURETIME5,
                           @(WXPTFrameworkExecute) : JSLIBINITTIME,
                           @(WXPTJSDownload) : NETWORKTIME,
                           @(WXPTJSCreateInstance) : COMMUNICATETIME,

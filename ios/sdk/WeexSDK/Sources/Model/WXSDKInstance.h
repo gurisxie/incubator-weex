@@ -295,6 +295,7 @@ typedef NS_ENUM(NSInteger, WXErrorCode) {//error.code
 @property (nonatomic, weak) id pageObject;
 @property (nonatomic, strong) NSMutableDictionary *performanceDict;
 
+- (void) sendMonitorIfNeed;
 
 /** 
  * Deprecated 

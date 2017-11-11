@@ -67,10 +67,12 @@ typedef enum : NSUInteger {
     WXComponentManager *_componentManager;
     WXRootView *_rootView;
     WXThreadSafeMutableDictionary *_moduleEventObservers;
+    BOOL _hasSendMonitor;
 }
 
 - (void)dealloc
 {
+    [self sendMonitorIfNeed];
     [_moduleEventObservers removeAllObjects];
     [self removeObservers];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -99,6 +101,7 @@ typedef enum : NSUInteger {
         _attrConfigs = [NSMutableDictionary new];
         _moduleEventObservers = [WXThreadSafeMutableDictionary new];
         _trackComponent = NO;
+        _hasSendMonitor = NO;
        
         [self addObservers];
     }
@@ -187,6 +190,11 @@ typedef enum : NSUInteger {
     
     WX_MONITOR_INSTANCE_PERF_START(WXPTFirstScreenRender, self);
     WX_MONITOR_INSTANCE_PERF_START(WXPTAllRender, self);
+    WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeFirst,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeSecond,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeThird,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeForth,self);
+    WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeFifth,self);
     
     NSMutableDictionary *dictionary = [_options mutableCopy];
     if ([WXLog logLevel] >= WXLogLevelLog) {
@@ -627,6 +635,16 @@ typedef enum : NSUInteger {
             [self destroyInstance];
         }
     }
+}
+
+- (void)sendMonitorIfNeed{
+    if(_hasSendMonitor) return;
+    _hasSendMonitor = YES;
+    // make the monitor data as dirty and not send it if has no FirstScreenRender time
+    if (!WX_MONITOR_INSTANCE_PERF_IS_RECORDED(WXPTFirstScreenRender, self)) {
+        return;
+    }
+    WX_MONITOR_INSTANCE_PERF_END(WXPTAllRender, self);
 }
 
 @end

@@ -165,6 +165,11 @@
         WX_MONITOR_INSTANCE_PERF_END(WXPTJSDownload, _instance);
         WX_MONITOR_INSTANCE_PERF_START(WXPTFirstScreenRender, _instance);
         WX_MONITOR_INSTANCE_PERF_START(WXPTAllRender, _instance);
+        WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeFirst,_instance);
+        WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeSecond,_instance);
+        WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeThird,_instance);
+        WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeForth,_instance);
+        WX_MONITOR_INSTANCE_PERF_START(WXBizMeasureTimeFifth,_instance);
         [WXPrerenderManager renderFromCache:[self.sourceURL absoluteString]];
         return;
     }
