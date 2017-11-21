@@ -33,7 +33,7 @@
 
   module.exports = {
     data : {
-      src:'http://www.error.com',
+      src:'https://error.a-never-exists-site-for-testcase-in-weex.com',
       txtStart:'',
       txtFinish:'',
       txtError:''
